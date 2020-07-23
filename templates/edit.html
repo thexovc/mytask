@@ -1,0 +1,36 @@
+{% extends 'base/base.html'%}
+
+{% block section %}
+
+<br><br>
+<div class="container-fluid">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Task</h1>
+			<p class="ml-4" style="font-size: 17px;"> {{task.task}}</p>
+			
+		<hr style="background-color: dimgray; border-width: 4px;">
+
+<br>
+<p style="font-size: 20px; color: brown;">Edit Task</p>
+<form class="form-inline" method="POST" >
+    {% csrf_token %}
+    <textarea class="form-control" cols="100%" name="task" placeholder="{{task.task}}" rows="10" data-rule="required" ></textarea>
+    <input type="hidden" name="completed" value="{{task.completed}}">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply Changes</button>
+  </form>
+
+</div>
+	</div>
+	
+</div>
+</div>
+<br><br><br><br><br>
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Mytask 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+{% endblock %}
